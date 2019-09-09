@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>statictest</title>
+    <link rel="stylesheet" href="/static/css/1.css">
+
+</head>
+<body>
+<a href="/index">回到顶部</a>
+<ol>
+    {% for each in params %}
+    <li>
+        <p>{{ each.name }}</p>
+        <img src="/static/images/{{ each.url }}">
+{#        {{ each.url }}#}
+    </li>
+    {% endfor %}
+</ol>
+
+</body>
+</html>

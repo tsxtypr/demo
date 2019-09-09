@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <h1>测试页面</h1>
+    <h2>name:{{ name }}</h2>
+    <h2>age:{{ age }}</h2>
+    <h2>hobby:{{ hobby }}</h2>
+    <h2>score:{{ score }}</h2>
+    数学成绩：{{ score.math }}
+    <br>
+    {{ a.hello }}
+
+    {% if age < 18 %}
+        <p>少年</p>
+    {% elif age < 40 %}
+        <p>壮年</p>
+    {% elif age < 60 %}
+        <p>中年</p>
+    {% else %}
+        <p>老年</p>
+    {% endif %}
+
+{% for each in hobby %}
+    <p>{{ each }}</p>
+{% endfor %}
+
+{% for k,v in score.items %}
+    <p>{{ k }}:{{ v }}</p>
+{% endfor %}
+
+{% for each in hobby %}
+    {% if forloop.first %}
+        <p style="color: aqua">{{ forloop.counter }}.{{ each }}</p>
+    {% elif forloop.last %}
+        <p style="color:rebeccapurple">{{ forloop.counter }}.{{ each }}</p>
+    {% else %}
+        <p>{{ forloop.counter }}.{{ each }}</p>
+    {% endif %}
+{% endfor %}
+
+</body>
+</html>
