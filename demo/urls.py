@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 from . import views
+from app01 import views as app01views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,7 @@ urlpatterns = [
     path('indextmp/',views.indextmp),
     path('abc/',views.abc),
     path('test/',views.test),
-    path('statictest',views.statictest)
+    path('statictest',views.statictest),
+    path('app01index',app01views.index),
 ]
 
